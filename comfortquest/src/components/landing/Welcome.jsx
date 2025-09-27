@@ -10,4 +10,4 @@ function Welcome() {
   )
 }
 
-export default App
+export default Welcome
