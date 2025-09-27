@@ -1,0 +1,67 @@
+{
+    "Workplace Comedy": {
+      "name": "Workplace Comedy",
+      "description": "Perfect for when you want familiar faces and daily routine humor",
+      "shows": [
+        { "id": "the-office", "weight": 10 },
+        { "id": "parks-recreation", "weight": 9 },
+        { "id": "brooklyn-nine-nine", "weight": 8 },
+        { "id": "abbott-elementary", "weight": 6 }
+      ]
+    },
+    "Cozy Sitcoms": {
+      "name": "Cozy Sitcoms",
+      "description": "Perfect for familiar friend groups and heartwarming moments",
+      "shows": [
+        { "id": "friends", "weight": 10 },
+        { "id": "how-i-met-your-mother", "weight": 9 },
+        { "id": "new-girl", "weight": 8 },
+        { "id": "community", "weight": 7 },
+        { "id": "schitts-creek", "weight": 6 }
+      ]
+    },
+    "Feel-Good Reality": {
+      "name": "Feel-Good Reality",
+      "description": "Perfect for uplifting content and positive human connections",
+      "shows": [
+        { "id": "great-british-bake-off", "weight": 10 },
+        { "id": "queer-eye", "weight": 9 },
+        { "id": "ted-lasso", "weight": 8 },
+        { "id": "heartstopper", "weight": 7 },
+        { "id": "somebody-feed-phil", "weight": 6 }
+      ]
+    },
+    "Cozy Mystery/Drama": {
+      "name": "Cozy Mystery/Drama",
+      "description": "Perfect for thoughtful storytelling and gentle intrigue",
+      "shows": [
+        { "id": "murder-she-wrote", "weight": 10 },
+        { "id": "only-murders-building", "weight": 9 },
+        { "id": "gilmore-girls", "weight": 8 },
+        { "id": "anne-with-an-e", "weight": 7 },
+        { "id": "northern-exposure", "weight": 6 }
+      ]
+    },
+    "Animated Comfort": {
+      "name": "Animated Comfort",
+      "description": "Perfect for imaginative worlds and nostalgic feelings",
+      "shows": [
+        { "id": "avatar-last-airbender", "weight": 10 },
+        { "id": "bobs-burgers", "weight": 9 },
+        { "id": "steven-universe", "weight": 8 },
+        { "id": "adventure-time", "weight": 7 },
+        { "id": "gravity-falls", "weight": 6 }
+      ]
+    },
+    "Lighthearted Adventure": {
+      "name": "Lighthearted Adventure",
+      "description": "Perfect for optimistic journeys and character growth",
+      "shows": [
+        { "id": "the-good-place", "weight": 10 },
+        { "id": "ted-lasso", "weight": 9 },
+        { "id": "brooklyn-nine-nine", "weight": 8 },
+        { "id": "doctor-who", "weight": 7 },
+        { "id": "psych", "weight": 6 }
+      ]
+    }
+  }
