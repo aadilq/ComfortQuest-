@@ -7,7 +7,7 @@ export default function Welcome({ onStart }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name.trim()) return;
-    onStart?.(name.trim());
+    onStart?.(name.trim()); // 🔥 This tells FlowController to move to ThemeSelector
   };
 
   return (
@@ -18,7 +18,9 @@ export default function Welcome({ onStart }) {
       </header>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="playerName" className="sr-only">Enter your name</label>
+        <label htmlFor="playerName" className="sr-only">
+          Enter your name
+        </label>
         <input
           id="playerName"
           type="text"
