@@ -7,17 +7,20 @@ export default function Welcome({ onStart }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name.trim()) return;
-    onStart?.(name.trim()); // 🔥 This tells FlowController to move to ThemeSelector
+    onStart?.(name.trim());
   };
 
   return (
-    <main role="main">
+    <main role="main" style={{ width: "100%" }}>
       <header>
         <h1>ComfortQuest</h1>
-        <p>Your mood, your time, your perfect comfort watch.</p>
+        <p>
+          Your mood, your time,<br />
+          your perfect comfort watch.
+        </p>
       </header>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}>
         <label htmlFor="playerName" className="sr-only">
           Enter your name
         </label>
@@ -34,7 +37,7 @@ export default function Welcome({ onStart }) {
         </button>
       </form>
 
-      <footer>
+      <footer style={{ marginTop: "2rem" }}>
         <small>Built for ShellHacks · Netflix Challenge</small>
       </footer>
     </main>

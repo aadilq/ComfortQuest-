@@ -1,0 +1,63 @@
+/* Import Pixelify Sans */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* Neutral reddish theme (default for Welcome + ThemeSelector) */
+body.neutral-theme {
+  background: url('../assets/Welcomebackground.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffcc00;
+  font-family: 'Pixelify Sans', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Headings */
+body.neutral-theme h1 {
+  font-size: 3rem;
+  color: #ff4d4d;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 1rem;
+  font-family: 'Pixelify Sans', monospace; /* Ensures heading uses it */
+}
+
+/* Paragraphs */
+body.neutral-theme p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Pixelify Sans', monospace;
+}
+
+/* Input box */
+body.neutral-theme input[type="text"] {
+  background-color: #1c1c1c;
+  border: 2px solid #ff4d4d;
+  color: #ffd6d6;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem; /* was 1rem, now reduced */
+  font-family: 'Pixelify Sans', monospace;
+}
+
+/* Buttons */
+body.neutral-theme button {
+  margin-top: 0.3rem; /* optional fine-tuning */
+  background-color: #a11212;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #ffcc00;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', monospace;
+  text-transform: uppercase;
+  box-shadow: 2px 2px #000;
+}
+
+body.neutral-theme button:disabled {
+  background-color: #4d1c1c;
+  cursor: not-allowed;
+}

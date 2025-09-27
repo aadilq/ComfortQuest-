@@ -1,0 +1,64 @@
+/* Import Pixelify Sans */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* Forest green theme */
+body.forest-theme {
+  background: radial-gradient(circle at top, #008200, #000000 80%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #925f00; /* brown */
+  font-family: 'Pixelify Sans', monospace;
+
+  /* SAME spacing rules as neutral */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* stack like neutral */
+}
+
+/* Headings */
+body.forest-theme h1 {
+  font-size: 3rem;
+  color: #925f00;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+body.forest-theme p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input box */
+body.forest-theme input[type="text"] {
+  background-color: #1c1c1c;
+  border: 2px solid #925f00;
+  color: #ee9b00;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+/* Buttons */
+body.forest-theme button {
+  margin-top: 0.3rem;
+  background-color: #2a2a72;
+  border: none;
+  padding: 0.6rem 1.2rem; /* smaller size like neutral */
+  font-size: 1rem;
+  color: #925f00;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', monospace;
+  text-transform: uppercase;
+  box-shadow: 2px 2px #000;
+}
+
+body.forest-theme button:disabled {
+  background-color: #1a1a40;
+  cursor: not-allowed;
+}

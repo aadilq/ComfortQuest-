@@ -1,30 +1,45 @@
 // src/FlowController.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Welcome from "./components/landing/Welcome.jsx";
 import ThemeSelector from "./components/quiz/ThemeSelector.jsx";
 
+// Load theme styles once
+import "./styles/neutral-theme.css";
+import "./styles/city-theme.css";
+import "./styles/forest-theme.css"; // OK if empty for now
+
 export default function FlowController() {
-  // Flow steps: "welcome" -> "theme" -> "scene" -> "results"
   const [step, setStep] = useState("welcome");
-
-  // Shared state across steps
   const [playerName, setPlayerName] = useState("");
-  const [theme, setTheme] = useState(null); // "city" | "forest" | null
 
-  // --- Welcome handlers ---
+  const setThemeClass = (t) => {
+    // Clear & apply theme class on <body>
+    document.body.className = "";
+    document.body.classList.add(`${t}-theme`);
+  };
+
+  // Always start in neutral
+  useEffect(() => {
+    setThemeClass("neutral");
+  }, []);
+
+  // --- Welcome ---
   const handleStart = (name) => {
     setPlayerName(name);
+    setThemeClass("neutral"); // ensure neutral on ThemeSelector entry
     setStep("theme");
   };
 
-  // --- ThemeSelector handlers ---
+  // --- ThemeSelector ---
   const handleBackFromTheme = () => {
+    setThemeClass("neutral"); // reset to neutral for Welcome
     setStep("welcome");
   };
 
   const handleContinueFromTheme = (chosenTheme) => {
-    setTheme(chosenTheme);
-    setStep("scene"); // TODO: route to your Scene flow (City/Forest)
+    // If you want the next screen to keep that theme:
+    setThemeClass(chosenTheme);
+    setStep("scene"); // placeholder next step
   };
 
   return (
@@ -36,34 +51,15 @@ export default function FlowController() {
           playerName={playerName}
           onBack={handleBackFromTheme}
           onContinue={handleContinueFromTheme}
+          setThemeClass={setThemeClass} // give selector direct control when clicking a card
         />
       )}
 
       {step === "scene" && (
-        <main role="main">
-          <header>
-            <h1>ComfortQuest</h1>
-          </header>
-          <p>
-            Starting <strong>{theme}</strong> adventure for <strong>{playerName}</strong>…
-          </p>
-          {/* TODO: render your Scene components based on `theme` */}
-          <footer>
-            <button onClick={() => setStep("theme")}>⬅ Back to Theme</button>
-            <button onClick={() => setStep("results")}>Continue ➡</button>
-          </footer>
-        </main>
-      )}
-
-      {step === "results" && (
-        <main role="main">
-          <header>
-            <h1>Results</h1>
-          </header>
-          <p>Results screen placeholder…</p>
-          <footer>
-            <button onClick={() => setStep("welcome")}>Restart</button>
-          </footer>
+        <main>
+          <h2>Scene placeholder</h2>
+          <p>Continue building your story flow here…</p>
+          <button onClick={() => setStep("welcome")}>Restart</button>
         </main>
       )}
     </>
