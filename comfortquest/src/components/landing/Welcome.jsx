@@ -1,13 +1,40 @@
-import "../../App.css";
+// src/components/landing/Welcome.jsx
+import { useState } from "react";
 
-function Welcome() {
+export default function Welcome({ onStart }) {
+  const [name, setName] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim()) return;
+    onStart?.(name.trim());
+  };
 
   return (
-    <div>
-      <p className='text-amber-600'>ComfortQuest</p>
-    </div>
-  )
-}
+    <main role="main">
+      <header>
+        <h1>ComfortQuest</h1>
+        <p>Your mood, your time, your perfect comfort watch.</p>
+      </header>
 
-export default Welcome
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="playerName" className="sr-only">Enter your name</label>
+        <input
+          id="playerName"
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          autoComplete="name"
+        />
+        <button type="submit" disabled={!name.trim()}>
+          Start My Quest ►
+        </button>
+      </form>
+
+      <footer>
+        <small>Built for ShellHacks · Netflix Challenge</small>
+      </footer>
+    </main>
+  );
+}
