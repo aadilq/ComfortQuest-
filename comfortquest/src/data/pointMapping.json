@@ -1,0 +1,102 @@
+{
+    "city-scene1-ChoiceA" : {
+        "Workplace Comedy" : 3, 
+        "Lighthearted Adventure" : 2
+    }, 
+    "city-scene1-ChoiceB" : {
+        "Cozy Mystery/Drama" : 3, 
+        "Animated Comfort" : 2
+    }, 
+
+
+
+
+    "city-scene2-ChoiceA" : {
+        "Animated Comfort" : 3, 
+        "Feel Good Reality" : 2
+    }, 
+    "city-scene2-ChoiceB" : {
+        "Cozy Sitcoms" : 3, 
+        "Workplace Comedy" : 2
+    }, 
+
+
+
+
+    "city-scene3-ChoiceA" : {
+        "Lighthearted Adventure" : 3, 
+        "Cozy Sitcoms" : 2
+    }, 
+    "city-scene3-ChoiceB" : {
+        "Feel Good Reality" : 3, 
+        "Cozy Mystery/Drama" : 2
+    }, 
+
+
+
+
+    "city-scene4-ChoiceA" : {
+        "Feel Good Reality" : 3, 
+        "Lighthearted Adventure" : 2
+    }, 
+    "city-scene4-ChoiceB" : {
+        "Cozy Mystery/Drama" : 3, 
+        "Animated Comfort" : 2
+    }, 
+
+
+
+
+    "forest-scene1-ChoiceA" : {
+        "Feel Good Reality" : 3, 
+        "Cozy Sitcoms" : 2
+    }, 
+    "forest-scene1-ChoiceB" : {
+        "Cozy Mystery/Drama" : 3, 
+        "Animated Comfort" : 2
+    }, 
+
+
+
+
+    
+
+    "forest-scene2-ChoiceA" : {
+        "Workplace Comedy" : 3, 
+        "Feel Good Reality" : 2
+    }, 
+    "forest-scene2-ChoiceB" : {
+        "Animated Comfort" : 3, 
+        "Cozy Mystery/Drama" : 2
+    }, 
+
+
+
+
+
+
+    "forest-scene3-ChoiceA" : {
+        "Lighthearted Adventure" : 3, 
+        "Workplace Comedy" : 2
+    }, 
+    "forest-scene3-ChoiceB" : {
+        "Cozy Mystery/Drama" : 3, 
+        "Animated Comfort" : 2
+    }, 
+
+
+
+    
+    "forest-scene4-ChoiceA" : {
+        "Cozy Sitcoms" : 4, 
+        "Lighthearted Adventure" : 1
+    }, 
+    "forest-scene4-ChoiceB" : {
+        "Animated Comfort" : 2, 
+        "Feel Good Reality" : 3
+    }
+
+
+
+
+}
