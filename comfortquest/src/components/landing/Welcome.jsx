@@ -11,14 +11,19 @@ export default function Welcome({ onStart }) {
   };
 
   return (
-    <main role="main">
+    <main role="main" style={{ width: "100%" }}>
       <header>
         <h1>ComfortQuest</h1>
-        <p>Your mood, your time, your perfect comfort watch.</p>
+        <p>
+          Your mood, your time,<br />
+          your perfect comfort watch.
+        </p>
       </header>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="playerName" className="sr-only">Enter your name</label>
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}>
+        <label htmlFor="playerName" className="sr-only">
+          Enter your name
+        </label>
         <input
           id="playerName"
           type="text"
@@ -32,7 +37,7 @@ export default function Welcome({ onStart }) {
         </button>
       </form>
 
-      <footer>
+      <footer style={{ marginTop: "2rem" }}>
         <small>Built for ShellHacks · Netflix Challenge</small>
       </footer>
     </main>

@@ -1,0 +1,64 @@
+/* Import Pixelify Sans */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* City purple theme */
+body.city-theme {
+  background: radial-gradient(circle at top, #4b0082, #000000 80%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #87cefa; /* sky blue */
+  font-family: 'Pixelify Sans', monospace;
+
+  /* SAME spacing rules as neutral */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* stack like neutral */
+}
+
+/* Headings */
+body.city-theme h1 {
+  font-size: 3rem;
+  color: #87cefa;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+body.city-theme p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input box */
+body.city-theme input[type="text"] {
+  background-color: #1c1c1c;
+  border: 2px solid #87cefa;
+  color: #e0f7ff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+/* Buttons */
+body.city-theme button {
+  margin-top: 0.3rem;
+  background-color: #2a2a72;
+  border: none;
+  padding: 0.6rem 1.2rem; /* smaller size like neutral */
+  font-size: 1rem;
+  color: #87cefa;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', monospace;
+  text-transform: uppercase;
+  box-shadow: 2px 2px #000;
+}
+
+body.city-theme button:disabled {
+  background-color: #1a1a40;
+  cursor: not-allowed;
+}
