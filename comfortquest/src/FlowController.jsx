@@ -1,24 +1,23 @@
-// src/FlowController.jsx
 import { useEffect, useState } from "react";
 import Welcome from "./components/landing/Welcome.jsx";
 import ThemeSelector from "./components/quiz/ThemeSelector.jsx";
 
-// Load theme styles once
+// Ensure these are imported once so the classes exist:
 import "./styles/neutral-theme.css";
 import "./styles/city-theme.css";
-import "./styles/forest-theme.css"; // OK if empty for now
+import "./styles/forest-theme.css"; // ok if you haven't styled it yet
 
 export default function FlowController() {
   const [step, setStep] = useState("welcome");
   const [playerName, setPlayerName] = useState("");
 
+  // Centralized theme switcher
   const setThemeClass = (t) => {
-    // Clear & apply theme class on <body>
     document.body.className = "";
     document.body.classList.add(`${t}-theme`);
   };
 
-  // Always start in neutral
+  // Always start neutral on first mount
   useEffect(() => {
     setThemeClass("neutral");
   }, []);
@@ -26,20 +25,27 @@ export default function FlowController() {
   // --- Welcome ---
   const handleStart = (name) => {
     setPlayerName(name);
-    setThemeClass("neutral"); // ensure neutral on ThemeSelector entry
+    setThemeClass("neutral"); // defensive: neutral when entering selector
     setStep("theme");
   };
 
-  // --- ThemeSelector ---
+  // --- Theme Selector ---
   const handleBackFromTheme = () => {
-    setThemeClass("neutral"); // reset to neutral for Welcome
+    setThemeClass("neutral"); // reset to neutral for welcome
     setStep("welcome");
   };
 
   const handleContinueFromTheme = (chosenTheme) => {
-    // If you want the next screen to keep that theme:
+    // Keep the chosen theme as we move forward
     setThemeClass(chosenTheme);
-    setStep("scene"); // placeholder next step
+    setStep("scene"); // your next screen
+  };
+
+  // --- Restart from any later screen ---
+  const handleRestart = () => {
+    setThemeClass("neutral");  // <— reset theme
+    setPlayerName("");         // optional: clear name
+    setStep("welcome");        // back to the beginning
   };
 
   return (
@@ -51,15 +57,17 @@ export default function FlowController() {
           playerName={playerName}
           onBack={handleBackFromTheme}
           onContinue={handleContinueFromTheme}
-          setThemeClass={setThemeClass} // give selector direct control when clicking a card
+          setThemeClass={setThemeClass} // lets the selector flip themes immediately on click
         />
       )}
 
       {step === "scene" && (
-        <main>
+        <main role="main" style={{ textAlign: "center" }}>
           <h2>Scene placeholder</h2>
-          <p>Continue building your story flow here…</p>
-          <button onClick={() => setStep("welcome")}>Restart</button>
+          <p>Continue building your story flow here...</p>
+          <button onClick={handleRestart} style={{ marginTop: "1rem" }}>
+            RESTART
+          </button>
         </main>
       )}
     </>
