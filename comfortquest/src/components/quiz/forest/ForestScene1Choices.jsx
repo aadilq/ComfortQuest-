@@ -1,8 +1,9 @@
-// src/components/quiz/forest/ForestScene4Choices.jsx
+// src/components/quiz/forest/ForestScene1Choices.jsx
 import { useEffect, useState } from "react";
-import bg from "../../../assets/forestscene4.png";
+import bg from "../../../assets/forestscene1.png";
 
-export default function ForestScene4Choices({
+export default function ForestScene1Choices({
+  playerName,
   setThemeClass,
   onBack,     // () => void
   onChoose,   // (choiceKey: 'A' | 'B') => void
@@ -16,22 +17,22 @@ export default function ForestScene4Choices({
   const choices = [
     {
       key: "A",
-      title: "Return to Town",
+      title: "Ranger Outpost",
       text:
-        "Head back while the trail is clear to grab a warm drink and share stories.",
+        "Head toward the ranger outpost to ask for a map and local guidance.",
     },
     {
       key: "B",
-      title: "Stay for Stargazing",
+      title: "Lantern Path",
       text:
-        "Spread a blanket and watch the constellations rise above the treeline.",
+        "Follow the lantern-lit trail deeper into the woods to explore on your own.",
     },
   ];
 
   return (
     <main
       role="main"
-      aria-labelledby="forest-s4-choices-title"
+      aria-labelledby="forest-s1-choices-title"
       style={{
         position: "fixed",
         inset: 0,
@@ -42,6 +43,7 @@ export default function ForestScene4Choices({
         textAlign: "left",
       }}
     >
+      {/* Header */}
       <header
         style={{
           position: "absolute",
@@ -52,14 +54,15 @@ export default function ForestScene4Choices({
           fontFamily: "Pixelify Sans, monospace",
         }}
       >
-        <h2 id="forest-s4-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
-          The Last Call
+        <h2 id="forest-s1-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
+          Whispering Pines — First Move
         </h2>
         <p style={{ margin: "0.25rem 0 0" }}>
-          One more decision for the night.
+          {playerName ? `${playerName}, ` : ""}where will you start?
         </p>
       </header>
 
+      {/* Choice grid */}
       <section
         aria-label="Choose your path"
         style={{
@@ -103,6 +106,7 @@ export default function ForestScene4Choices({
         })}
       </section>
 
+      {/* Footer actions */}
       <footer
         style={{
           position: "absolute",

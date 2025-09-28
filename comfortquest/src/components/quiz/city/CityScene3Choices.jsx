@@ -19,7 +19,7 @@ export default function CityScene3Choices({
       title: "Holographic Concert",
       text:
         "A massive holographic concert where thousands of avatars are dancing to synthesized music.",
-      scoring: "+3 Lighthearted Adventure, +2 Cozy Sitcoms",
+      
     },
     {
       key: "B",

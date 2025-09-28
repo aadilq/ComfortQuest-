@@ -1,8 +1,8 @@
-// src/components/quiz/forest/ForestScene4Choices.jsx
+// src/components/quiz/forest/ForestScene3Choices.jsx
 import { useEffect, useState } from "react";
-import bg from "../../../assets/forestscene4.png";
+import bg from "../../../assets/forestscene3.png";
 
-export default function ForestScene4Choices({
+export default function ForestScene3Choices({
   setThemeClass,
   onBack,     // () => void
   onChoose,   // (choiceKey: 'A' | 'B') => void
@@ -16,22 +16,22 @@ export default function ForestScene4Choices({
   const choices = [
     {
       key: "A",
-      title: "Return to Town",
+      title: "Festival Clearing",
       text:
-        "Head back while the trail is clear to grab a warm drink and share stories.",
+        "Head toward the distant music and lanterns for a lively forest gathering.",
     },
     {
       key: "B",
-      title: "Stay for Stargazing",
+      title: "Moonlit Trail",
       text:
-        "Spread a blanket and watch the constellations rise above the treeline.",
+        "Take a quieter path shaded by old cedars and follow the sound of a nearby creek.",
     },
   ];
 
   return (
     <main
       role="main"
-      aria-labelledby="forest-s4-choices-title"
+      aria-labelledby="forest-s3-choices-title"
       style={{
         position: "fixed",
         inset: 0,
@@ -52,12 +52,10 @@ export default function ForestScene4Choices({
           fontFamily: "Pixelify Sans, monospace",
         }}
       >
-        <h2 id="forest-s4-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
-          The Last Call
+        <h2 id="forest-s3-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
+          Night in the Grove
         </h2>
-        <p style={{ margin: "0.25rem 0 0" }}>
-          One more decision for the night.
-        </p>
+        <p style={{ margin: "0.25rem 0 0" }}>What feel are you going for?</p>
       </header>
 
       <section

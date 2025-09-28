@@ -1,8 +1,8 @@
-// src/components/quiz/forest/ForestScene4Choices.jsx
+// src/components/quiz/forest/ForestScene2Choices.jsx
 import { useEffect, useState } from "react";
-import bg from "../../../assets/forestscene4.png";
+import bg from "../../../assets/forestscene2.png";
 
-export default function ForestScene4Choices({
+export default function ForestScene2Choices({
   setThemeClass,
   onBack,     // () => void
   onChoose,   // (choiceKey: 'A' | 'B') => void
@@ -16,22 +16,22 @@ export default function ForestScene4Choices({
   const choices = [
     {
       key: "A",
-      title: "Return to Town",
+      title: "Cozy Cabin",
       text:
-        "Head back while the trail is clear to grab a warm drink and share stories.",
+        "Stop by a small cabin to rest and chat with the caretaker about local legends.",
     },
     {
       key: "B",
-      title: "Stay for Stargazing",
+      title: "Lookout Ridge",
       text:
-        "Spread a blanket and watch the constellations rise above the treeline.",
+        "Climb to a lookout ridge to scan the treetops and watch the sunset over the valley.",
     },
   ];
 
   return (
     <main
       role="main"
-      aria-labelledby="forest-s4-choices-title"
+      aria-labelledby="forest-s2-choices-title"
       style={{
         position: "fixed",
         inset: 0,
@@ -52,11 +52,11 @@ export default function ForestScene4Choices({
           fontFamily: "Pixelify Sans, monospace",
         }}
       >
-        <h2 id="forest-s4-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
-          The Last Call
+        <h2 id="forest-s2-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
+          Crossroads in the Pines
         </h2>
         <p style={{ margin: "0.25rem 0 0" }}>
-          One more decision for the night.
+          Which way do you go?
         </p>
       </header>
 

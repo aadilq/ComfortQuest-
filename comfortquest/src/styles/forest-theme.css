@@ -3,7 +3,7 @@
 
 /* Forest green theme */
 body.forest-theme {
-  background: radial-gradient(circle at top, #008200, #000000 80%);
+  background: url('../assets/foresttheme.png') no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   color: #925f00; /* brown */
@@ -18,6 +18,19 @@ body.forest-theme {
   flex-direction: column; /* stack like neutral */
 }
 
+
+body.forest-theme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(3px);
+  transform: scale(1.05); /* fixes blur edges */
+  z-index: -1;
+}
 /* Headings */
 body.forest-theme h1 {
   font-size: 3rem;
