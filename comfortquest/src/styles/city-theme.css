@@ -3,11 +3,13 @@
 
 /* City purple theme */
 body.city-theme {
-  background: radial-gradient(circle at top, #4b0082, #000000 80%);
+  background: url('../assets/citytheme.png') no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   color: #87cefa; /* sky blue */
   font-family: 'Pixelify Sans', monospace;
+
+  
 
   /* SAME spacing rules as neutral */
   min-height: 100vh;
@@ -16,6 +18,19 @@ body.city-theme {
   align-items: center;
   text-align: center;
   flex-direction: column; /* stack like neutral */
+}
+
+body.city-theme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(3px);
+  transform: scale(1.05); /* fixes blur edges */
+  z-index: -1;
 }
 
 /* Headings */
