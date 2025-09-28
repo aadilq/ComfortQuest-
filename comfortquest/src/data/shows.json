@@ -1,0 +1,178 @@
+{
+    "the-office": {
+      "title": "The Office",
+      "category": "Workplace Comedy",
+      "poster": "/images/shows/the-office.jpg",
+      "whereToWatch": ["Netflix", "Peacock"],
+      "episodeLength": "22 minutes",
+      "seasons": 9
+    },
+    "parks-recreation": {
+      "title": "Parks and Recreation", 
+      "category": "Workplace Comedy",
+      "poster": "/images/shows/pr.jpeg",
+      "whereToWatch": ["Netflix", "Peacock"],
+      "episodeLength": "22 minutes", 
+      "seasons": 7
+    },
+    "brooklyn-nine-nine": {
+      "title": "Brooklyn Nine-Nine",
+      "category": "Workplace Comedy", 
+      "poster": "/images/shows/bb.jpg",
+      "whereToWatch": ["Hulu", "Netflix"],
+      "episodeLength": "22 minutes",
+      "seasons": 8
+    },
+    "abbott-elementary": {
+      "title": "Abbott Elementary",
+      "category": "Workplace Comedy",
+      "poster": "/images/shows/AE.jpeg", 
+      "whereToWatch": ["Hulu", "ABC"],
+      "episodeLength": "22 minutes",
+      "seasons": 3
+    },
+    "friends": {
+      "title": "Friends",
+      "category": "Cozy Sitcoms",
+      "poster": "/images/shows/friends.jpeg",
+      "whereToWatch": ["HBO Max", "Netflix"],
+      "episodeLength": "22 minutes",
+      "seasons": 10
+    },
+    "how-i-met-your-mother": {
+      "title": "How I Met Your Mother", 
+      "category": "Cozy Sitcoms",
+      "poster": "/images/shows/himym.jpg",
+      "whereToWatch": ["Hulu", "Amazon Prime"],
+      "episodeLength": "22 minutes",
+      "seasons": 9
+    },
+    "new-girl": {
+      "title": "New Girl",
+      "category": "Cozy Sitcoms", 
+      "poster": "/images/shows/ng.jpeg",
+      "whereToWatch": ["Netflix", "Hulu"],
+      "episodeLength": "22 minutes",
+      "seasons": 7
+    },
+    "community": {
+      "title": "Community",
+      "category": "Cozy Sitcoms",
+      "poster": "/images/shows/community.jpg",
+      "whereToWatch": ["Netflix", "Hulu"], 
+      "episodeLength": "22 minutes",
+      "seasons": 6
+    },
+    "great-british-bake-off": {
+      "title": "The Great British Bake Off",
+      "category": "Feel-Good Reality",
+      "poster": "/images/shows/gbbf.jpeg",
+      "whereToWatch": ["Netflix"],
+      "episodeLength": "60 minutes",
+      "seasons": 14
+    },
+    "queer-eye": {
+      "title": "Queer Eye", 
+      "category": "Feel-Good Reality",
+      "poster": "/images/shows/queer-eye.jpeg",
+      "whereToWatch": ["Netflix"],
+      "episodeLength": "45 minutes",
+      "seasons": 7
+    },
+    "schitts-creek": {
+      "title": "Schitt's Creek",
+      "category": "Feel-Good Reality",
+      "poster": "/images/shows/schitts-creek.jpeg", 
+      "whereToWatch": ["Netflix", "Hulu"],
+      "episodeLength": "22 minutes",
+      "seasons": 6
+    },
+    "avatar-last-airbender": {
+      "title": "Avatar: The Last Airbender",
+      "category": "Animated Comfort",
+      "poster": "/images/shows/avatar.jpg",
+      "whereToWatch": ["Netflix", "Paramount+"],
+      "episodeLength": "23 minutes", 
+      "seasons": 3
+    },
+    "bobs-burgers": {
+      "title": "Bob's Burgers",
+      "category": "Animated Comfort",
+      "poster": "/images/shows/bb.jpg",
+      "whereToWatch": ["Hulu", "Fox"],
+      "episodeLength": "22 minutes",
+      "seasons": 14
+    },
+    "steven-universe": {
+      "title": "Steven Universe", 
+      "category": "Animated Comfort",
+      "poster": "/images/shows/su.jpg",
+      "whereToWatch": ["HBO Max", "Hulu"],
+      "episodeLength": "11 minutes",
+      "seasons": 5
+    },
+    "adventure-time": {
+      "title": "Adventure Time",
+      "category": "Animated Comfort",
+      "poster": "/images/shows/at.jpg",
+      "whereToWatch": ["HBO Max", "Hulu"],
+      "episodeLength": "11 minutes",
+      "seasons": 10
+    },
+    "murder-she-wrote": {
+      "title": "Murder, She Wrote",
+      "category": "Cozy Mystery/Drama", 
+      "poster": "/images/shows/murder.jpg",
+      "whereToWatch": ["Peacock", "Amazon Prime"],
+      "episodeLength": "48 minutes",
+      "seasons": 12
+    },
+    "columbo": {
+      "title": "Columbo",
+      "category": "Cozy Mystery/Drama",
+      "poster": "/images/shows/columbo.jpg",
+      "whereToWatch": ["Peacock", "Tubi"],
+      "episodeLength": "75 minutes",
+      "seasons": 10
+    },
+    "only-murders-building": {
+      "title": "Only Murders in the Building",
+      "category": "Cozy Mystery/Drama",
+      "poster": "/images/shows/omib.jpg", 
+      "whereToWatch": ["Hulu"],
+      "episodeLength": "30 minutes",
+      "seasons": 3
+    },
+    "gilmore-girls": {
+      "title": "Gilmore Girls",
+      "category": "Cozy Mystery/Drama",
+      "poster": "/images/shows/gg.jpg",
+      "whereToWatch": ["Netflix"],
+      "episodeLength": "42 minutes",
+      "seasons": 7
+    },
+    "ted-lasso": {
+      "title": "Ted Lasso", 
+      "category": "Lighthearted Adventure",
+      "poster": "/images/shows/tl.jpg",
+      "whereToWatch": ["Apple TV+"],
+      "episodeLength": "30 minutes",
+      "seasons": 3
+    },
+    "the-good-place": {
+      "title": "The Good Place",
+      "category": "Lighthearted Adventure",
+      "poster": "/images/shows/tgp.jpg",
+      "whereToWatch": ["Netflix", "Peacock"],
+      "episodeLength": "22 minutes",
+      "seasons": 4
+    },
+    "shrinking": {
+      "title": "Shrinking",
+      "category": "Lighthearted Adventure", 
+      "poster": "/images/shows/shrinking.jpg",
+      "whereToWatch": ["Apple TV+"],
+      "episodeLength": "30 minutes",
+      "seasons": 1
+    }
+  }

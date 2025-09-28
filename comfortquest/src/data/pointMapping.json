@@ -13,7 +13,7 @@
 
     "city-scene2-ChoiceA" : {
         "Animated Comfort" : 3, 
-        "Feel Good Reality" : 2
+        "Feel-Good Reality" : 2
     }, 
     "city-scene2-ChoiceB" : {
         "Cozy Sitcoms" : 3, 
@@ -28,7 +28,7 @@
         "Cozy Sitcoms" : 2
     }, 
     "city-scene3-ChoiceB" : {
-        "Feel Good Reality" : 3, 
+        "Feel-Good Reality" : 3, 
         "Cozy Mystery/Drama" : 2
     }, 
 
@@ -36,7 +36,7 @@
 
 
     "city-scene4-ChoiceA" : {
-        "Feel Good Reality" : 3, 
+        "Feel-Good Reality" : 3, 
         "Lighthearted Adventure" : 2
     }, 
     "city-scene4-ChoiceB" : {
@@ -48,7 +48,7 @@
 
 
     "forest-scene1-ChoiceA" : {
-        "Feel Good Reality" : 3, 
+        "Feel-Good Reality" : 3, 
         "Cozy Sitcoms" : 2
     }, 
     "forest-scene1-ChoiceB" : {
@@ -63,7 +63,7 @@
 
     "forest-scene2-ChoiceA" : {
         "Workplace Comedy" : 3, 
-        "Feel Good Reality" : 2
+        "Feel-Good Reality" : 2
     }, 
     "forest-scene2-ChoiceB" : {
         "Animated Comfort" : 3, 
@@ -93,7 +93,7 @@
     }, 
     "forest-scene4-ChoiceB" : {
         "Animated Comfort" : 2, 
-        "Feel Good Reality" : 3
+        "Feel-Good Reality" : 3
     }
 
 
