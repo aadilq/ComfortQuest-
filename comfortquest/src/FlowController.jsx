@@ -23,6 +23,10 @@ import ForestScene3Choices from "./components/quiz/forest/ForestScene3Choices.js
 import ForestScene4 from "./components/quiz/forest/ForestScene4.jsx";
 import ForestScene4Choices from "./components/quiz/forest/ForestScene4Choices.jsx";
 
+// Results
+import ResultsScreen from "./components/results/ResultsScreen.jsx";
+import { getTopRecommendations } from "./utils/recommendation.js";
+
 // Theme CSS
 import "./styles/neutral-theme.css";
 import "./styles/city-theme.css";
@@ -37,6 +41,9 @@ export default function FlowController() {
     cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
     forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
   });
+
+  // holds computed recs for results pages
+  const [summary, setSummary] = useState(null);
 
   const setThemeClass = (t) => {
     document.body.className = "";
@@ -53,6 +60,7 @@ export default function FlowController() {
       cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
       forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
     });
+    setSummary(null);
     setThemeClass("neutral");
     setStep("theme");
   };
@@ -87,8 +95,14 @@ export default function FlowController() {
 
   const goCityScene4Choices = () => setStep("city-scene-4-choices");
   const handleCityScene4Choice = (choiceKey) => {
-    setStoryState((s) => ({ ...s, cityScene4: choiceKey }));
-    setStep("city-result"); // placeholder result
+    // store choice then compute recommendations -> city-result
+    setStoryState((s) => {
+      const next = { ...s, cityScene4: choiceKey };
+      const res = getTopRecommendations(next, "city", 3);
+      setSummary(res);
+      return next;
+    });
+    setStep("city-result");
   };
 
   // ===== FOREST =====
@@ -112,8 +126,14 @@ export default function FlowController() {
 
   const goForestScene4Choices = () => setStep("forest-scene-4-choices");
   const handleForestScene4Choice = (choiceKey) => {
-    setStoryState((s) => ({ ...s, forestScene4: choiceKey }));
-    setStep("forest-result"); // placeholder result
+    // store choice then compute recommendations -> forest-result
+    setStoryState((s) => {
+      const next = { ...s, forestScene4: choiceKey };
+      const res = getTopRecommendations(next, "forest", 3);
+      setSummary(res);
+      return next;
+    });
+    setStep("forest-result");
   };
 
   const handleRestart = () => {
@@ -124,6 +144,7 @@ export default function FlowController() {
       cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
       forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
     });
+    setSummary(null);
     setStep("welcome");
   };
 
@@ -168,18 +189,14 @@ export default function FlowController() {
       {step === "city-scene-4-choices" && (
         <CityScene4Choices setThemeClass={setThemeClass} onBack={() => setStep("city-scene-4")} onChoose={handleCityScene4Choice} />
       )}
+
       {step === "city-result" && (
-        <main role="main" style={{ position: "fixed", inset: 0, display: "grid", placeItems: "center", textAlign: "center", padding: "2rem" }}>
-          <div>
-            <h2>City Path — Summary</h2>
-            <p>
-              {["1","2","3","4"].map((n,i)=>(
-                <span key={n}>Scene{n}: <b>{storyState[`cityScene${n}`] || "—"}</b>{i<3?" · ":""}</span>
-              ))}
-            </p>
-            <button onClick={handleRestart} style={{ marginTop: "1rem" }}>Restart</button>
-          </div>
-        </main>
+        <ResultsScreen
+          playerName={playerName}
+          theme="city"
+          summary={summary}
+          onRestart={handleRestart}
+        />
       )}
 
       {/* FOREST ROUTE */}
@@ -210,18 +227,14 @@ export default function FlowController() {
       {step === "forest-scene-4-choices" && (
         <ForestScene4Choices setThemeClass={setThemeClass} onBack={() => setStep("forest-scene-4")} onChoose={handleForestScene4Choice} />
       )}
+
       {step === "forest-result" && (
-        <main role="main" style={{ position: "fixed", inset: 0, display: "grid", placeItems: "center", textAlign: "center", padding: "2rem" }}>
-          <div>
-            <h2>Forest Path — Summary</h2>
-            <p>
-              {["1","2","3","4"].map((n,i)=>(
-                <span key={n}>Scene{n}: <b>{storyState[`forestScene${n}`] || "—"}</b>{i<3?" · ":""}</span>
-              ))}
-            </p>
-            <button onClick={handleRestart} style={{ marginTop: "1rem" }}>Restart</button>
-          </div>
-        </main>
+        <ResultsScreen
+          playerName={playerName}
+          theme="forest"
+          summary={summary}
+          onRestart={handleRestart}
+        />
       )}
     </>
   );
