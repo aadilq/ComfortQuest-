@@ -13,8 +13,20 @@ export default function Welcome({ onStart }) {
   return (
     <main role="main" style={{ width: "100%" }}>
       <header>
-        <h1>ComfortQuest</h1>
-        <p>
+        <h1
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              ">ComfortQuest</h1>
+        <p
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              ">
           Your mood, your time,<br />
           your perfect comfort watch.
         </p>
@@ -25,6 +37,12 @@ export default function Welcome({ onStart }) {
           Enter your name
         </label>
         <input
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "
           id="playerName"
           type="text"
           placeholder="Enter your name"
@@ -32,13 +50,21 @@ export default function Welcome({ onStart }) {
           onChange={(e) => setName(e.target.value)}
           autoComplete="name"
         />
-        <button type="submit" disabled={!name.trim()}>
+        <button 
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "
+        type="submit" disabled={!name.trim()}>
           Start My Quest ►
         </button>
       </form>
 
       <footer style={{ marginTop: "2rem" }}>
-        <small>Built for ShellHacks · Netflix Challenge</small>
+        <small
+        >Built for ShellHacks · Netflix Challenge</small>
       </footer>
     </main>
   );

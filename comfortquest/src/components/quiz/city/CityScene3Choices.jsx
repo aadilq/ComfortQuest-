@@ -19,14 +19,12 @@ export default function CityScene3Choices({
       title: "Holographic Concert",
       text:
         "A massive holographic concert where thousands of avatars are dancing to synthesized music.",
-      
     },
     {
       key: "B",
       title: "Hidden Analog Garden",
       text:
         "A hidden analog garden tucked between skyscrapers, where real trees grow under artificial starlight.",
-      scoring: "+3 Feel-Good Reality, +2 Cozy Mystery/Drama",
     },
   ];
 
@@ -82,6 +80,7 @@ export default function CityScene3Choices({
               key={c.key}
               onClick={() => setSelected(c.key)}
               aria-pressed={active}
+              className="city-choice-glow"
               style={{
                 textAlign: "left",
                 padding: "1rem 1.25rem",
@@ -90,7 +89,6 @@ export default function CityScene3Choices({
                 backdropFilter: "blur(4px)",
                 WebkitBackdropFilter: "blur(4px)",
                 border: active ? "3px solid #9bdcff" : "2px solid #3a4ea3",
-                boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
                 color: "#9bdcff",
                 cursor: "pointer",
                 fontFamily: "Pixelify Sans, monospace",
@@ -100,7 +98,6 @@ export default function CityScene3Choices({
                 Choice {c.key}: {c.title}
               </div>
               <div style={{ lineHeight: 1.55 }}>{c.text}</div>
-              <div style={{ marginTop: 8, opacity: 0.7 }}>{c.scoring}</div>
             </button>
           );
         })}
@@ -117,6 +114,7 @@ export default function CityScene3Choices({
       >
         <button
           onClick={onBack}
+          className="city-btn-glow"
           style={{
             backgroundColor: "#1c2340",
             color: "#9bdcff",
@@ -125,7 +123,6 @@ export default function CityScene3Choices({
             padding: "0.6rem 1rem",
             fontFamily: "Pixelify Sans, monospace",
             textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
             cursor: "pointer",
           }}
         >
@@ -134,6 +131,7 @@ export default function CityScene3Choices({
         <button
           disabled={!selected}
           onClick={() => selected && onChoose(selected)}
+          className="city-btn-glow"
           style={{
             opacity: selected ? 1 : 0.5,
             backgroundColor: "#1c2340",
@@ -143,7 +141,6 @@ export default function CityScene3Choices({
             padding: "0.6rem 1rem",
             fontFamily: "Pixelify Sans, monospace",
             textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
             cursor: selected ? "pointer" : "not-allowed",
           }}
         >

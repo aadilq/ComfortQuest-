@@ -77,3 +77,58 @@ body.city-theme button:disabled {
   background-color: #1a1a40;
   cursor: not-allowed;
 }
+
+/* --- Neon glow for City choice cards --- */
+.city-choice-glow {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: 0 0 8px rgba(155, 220, 255, 0.35), 0 0 16px rgba(155, 220, 255, 0.20);
+}
+
+.city-choice-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 12px rgba(155, 220, 255, 0.70), 0 0 22px rgba(155, 220, 255, 0.55);
+  border-color: #9bdcff !important; /* keep the cyan rim on hover */
+}
+
+.city-choice-glow:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #0d1022 inset,
+    0 0 0 3px #3a4ea3,
+    0 0 10px rgba(155, 220, 255, 0.9),
+    0 0 22px rgba(155, 220, 255, 0.65);
+}
+
+/* Optional press effect */
+.city-choice-glow:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* --- Glow for Back / Continue buttons --- */
+.city-btn-glow {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  box-shadow: 0 0 6px rgba(155, 220, 255, 0.30), 0 0 12px rgba(155, 220, 255, 0.18);
+}
+
+.city-btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(155, 220, 255, 0.80), 0 0 18px rgba(155, 220, 255, 0.60);
+  border-color: #9bdcff !important;
+}
+
+.city-btn-glow:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #0d1022 inset,
+    0 0 0 3px #3a4ea3,
+    0 0 10px rgba(155, 220, 255, 0.9),
+    0 0 20px rgba(155, 220, 255, 0.6);
+}
+
+/* Motion-friendly */
+@media (prefers-reduced-motion: reduce) {
+  .city-choice-glow,
+  .city-btn-glow {
+    transition: none;
+  }
+}

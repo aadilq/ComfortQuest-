@@ -21,6 +21,10 @@ export default function ForestScene1({ playerName, setThemeClass, onContinue }) 
     >
       {/* Compact scenario bubble (top-left) */}
       <section
+
+      className="relative 
+             hover:scale-105 
+             transition-all duration-300"
         style={{
           position: "absolute",
           top: "2rem",
@@ -50,21 +54,21 @@ export default function ForestScene1({ playerName, setThemeClass, onContinue }) 
       {/* Continue (bottom-right) */}
       <div style={{ position: "fixed", right: "2rem", bottom: "2rem" }}>
         <button
-          onClick={onContinue}
-          style={{
-            backgroundColor: "#1c2340",
-            color: "#925f00",
-            border: "2px solid #444",
-            borderRadius: 10,
-            padding: "0.7rem 1.2rem",
-            fontFamily: "Pixelify Sans, monospace",
-            textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
-            cursor: "pointer",
-          }}
-        >
-          Continue ➜
-        </button>
+  onClick={onContinue}
+  className="forest-btn-glow"
+  style={{
+    backgroundColor: "#1c2340",
+    color: "#925f00",
+    border: "2px solid #444",
+    borderRadius: 10,
+    padding: "0.7rem 1.2rem",
+    fontFamily: "Pixelify Sans, monospace",
+    textTransform: "uppercase",
+    cursor: "pointer",
+  }}
+>
+  Continue ➜
+</button>
       </div>
     </main>
   );

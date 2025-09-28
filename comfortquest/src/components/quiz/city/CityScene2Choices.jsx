@@ -25,7 +25,6 @@ export default function CityScene2Choices({
       title: "Sky-High Rooftop Bar",
       text:
         "A sky-high rooftop bar where holographic bartenders serve glowing cocktails to a crowd of humans.",
-      scoring: "+3 Cozy Sitcoms, +2 Workplace Comedy",
     },
   ];
 
@@ -81,6 +80,7 @@ export default function CityScene2Choices({
               key={c.key}
               onClick={() => setSelected(c.key)}
               aria-pressed={active}
+              className="city-choice-glow" // <-- neon glow class
               style={{
                 textAlign: "left",
                 padding: "1rem 1.25rem",
@@ -89,7 +89,6 @@ export default function CityScene2Choices({
                 backdropFilter: "blur(4px)",
                 WebkitBackdropFilter: "blur(4px)",
                 border: active ? "3px solid #9bdcff" : "2px solid #3a4ea3",
-                boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
                 color: "#9bdcff",
                 cursor: "pointer",
                 fontFamily: "Pixelify Sans, monospace",
@@ -99,7 +98,6 @@ export default function CityScene2Choices({
                 Choice {c.key}: {c.title}
               </div>
               <div style={{ lineHeight: 1.55 }}>{c.text}</div>
-              <div style={{ marginTop: 8, opacity: 0.7 }}>{c.scoring}</div>
             </button>
           );
         })}
@@ -115,24 +113,9 @@ export default function CityScene2Choices({
         }}
       >
         <button
-          onClick={onBack}
-          style={{
-            backgroundColor: "#1c2340",
-            color: "#9bdcff",
-            border: "2px solid #3a4ea3",
-            borderRadius: 10,
-            padding: "0.6rem 1rem",
-            fontFamily: "Pixelify Sans, monospace",
-            textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
-            cursor: "pointer",
-          }}
-        >
-          ⬅ Back
-        </button>
-        <button
           disabled={!selected}
           onClick={() => selected && onChoose(selected)}
+          className="city-btn-glow"
           style={{
             opacity: selected ? 1 : 0.5,
             backgroundColor: "#1c2340",
@@ -142,7 +125,24 @@ export default function CityScene2Choices({
             padding: "0.6rem 1rem",
             fontFamily: "Pixelify Sans, monospace",
             textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
+            cursor: selected ? "pointer" : "not-allowed",
+          }}
+        >
+          ⬅ Back
+        </button>
+        <button
+          disabled={!selected}
+          onClick={() => selected && onChoose(selected)}
+          className="city-btn-glow"
+          style={{
+            opacity: selected ? 1 : 0.5,
+            backgroundColor: "#1c2340",
+            color: "#9bdcff",
+            border: "2px solid #3a4ea3",
+            borderRadius: 10,
+            padding: "0.6rem 1rem",
+            fontFamily: "Pixelify Sans, monospace",
+            textTransform: "uppercase",
             cursor: selected ? "pointer" : "not-allowed",
           }}
         >

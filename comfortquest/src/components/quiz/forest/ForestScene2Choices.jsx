@@ -77,77 +77,77 @@ export default function ForestScene2Choices({
           const active = selected === c.key;
           return (
             <button
-              key={c.key}
-              onClick={() => setSelected(c.key)}
-              aria-pressed={active}
-              style={{
-                textAlign: "left",
-                padding: "1rem 1.25rem",
-                borderRadius: 12,
-                background: "rgba(0,0,0,0.45)",
-                backdropFilter: "blur(4px)",
-                WebkitBackdropFilter: "blur(4px)",
-                border: active ? "3px solid #ee9b00" : "2px solid #444",
-                boxShadow: "0 0 0 2px rgba(20,25,15,0.6) inset, 2px 2px #000",
-                color: "#ee9b00",
-                cursor: "pointer",
-                fontFamily: "Pixelify Sans, monospace",
-              }}
-            >
-              <div style={{ fontSize: "1rem", color: "#c58f3b", marginBottom: 6 }}>
-                Choice {c.key}: {c.title}
-              </div>
-              <div style={{ lineHeight: 1.55 }}>{c.text}</div>
-            </button>
+  key={c.key}
+  onClick={() => setSelected(c.key)}
+  aria-pressed={active}
+  className="forest-choice-glow"   // <-- add this
+  style={{
+    textAlign: "left",
+    padding: "1rem 1.25rem",
+    borderRadius: 12,
+    background: "rgba(0,0,0,0.45)",
+    backdropFilter: "blur(4px)",
+    WebkitBackdropFilter: "blur(4px)",
+    border: active ? "3px solid #ee9b00" : "2px solid #444",
+    color: "#ee9b00",
+    cursor: "pointer",
+    fontFamily: "Pixelify Sans, monospace",
+  }}
+>
+  <div style={{ fontSize: "1rem", color: "#c58f3b", marginBottom: 6 }}>
+    Choice {c.key}: {c.title}
+  </div>
+  <div style={{ lineHeight: 1.55 }}>{c.text}</div>
+</button>
           );
         })}
       </section>
 
       <footer
-        style={{
-          position: "absolute",
-          right: "2rem",
-          bottom: "2rem",
-          display: "flex",
-          gap: "0.5rem",
-        }}
-      >
-        <button
-          onClick={onBack}
-          style={{
-            backgroundColor: "#1c2340",
-            color: "#925f00",
-            border: "2px solid #444",
-            borderRadius: 10,
-            padding: "0.6rem 1rem",
-            fontFamily: "Pixelify Sans, monospace",
-            textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
-            cursor: "pointer",
-          }}
-        >
-          ⬅ Back
-        </button>
+  style={{
+    position: "absolute",
+    right: "2rem",
+    bottom: "2rem",
+    display: "flex",
+    gap: "0.5rem",
+  }}
+>
+  <button
+    onClick={onBack}
+    className="forest-btn-glow"   // <-- glow here
+    style={{
+      backgroundColor: "#1c2340",
+      color: "#925f00",
+      border: "2px solid #444",
+      borderRadius: 10,
+      padding: "0.6rem 1rem",
+      fontFamily: "Pixelify Sans, monospace",
+      textTransform: "uppercase",
+      cursor: "pointer",
+    }}
+  >
+    ⬅ Back
+  </button>
 
-        <button
-          disabled={!selected}
-          onClick={() => selected && onChoose?.(selected)}
-          style={{
-            opacity: selected ? 1 : 0.5,
-            backgroundColor: "#1c2340",
-            color: "#925f00",
-            border: "2px solid #444",
-            borderRadius: 10,
-            padding: "0.6rem 1rem",
-            fontFamily: "Pixelify Sans, monospace",
-            textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
-            cursor: selected ? "pointer" : "not-allowed",
-          }}
-        >
-          Continue ➜
-        </button>
-      </footer>
+  <button
+    disabled={!selected}
+    onClick={() => selected && onChoose(selected)}
+    className="forest-btn-glow"   // <-- glow here too
+    style={{
+      opacity: selected ? 1 : 0.5,
+      backgroundColor: "#1c2340",
+      color: "#925f00",
+      border: "2px solid #444",
+      borderRadius: 10,
+      padding: "0.6rem 1rem",
+      fontFamily: "Pixelify Sans, monospace",
+      textTransform: "uppercase",
+      cursor: selected ? "pointer" : "not-allowed",
+    }}
+  >
+    Continue ➜
+  </button>
+</footer>
     </main>
   );
 }
