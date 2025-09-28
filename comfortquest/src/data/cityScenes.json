@@ -1,0 +1,55 @@
+{
+    "theme": "Neon Vista",
+    "scenes": {
+      "scene1": {
+        "text": "You've just arrived in the city of Neon Vista in Neo-Tokyo 2087...curious about a city that never powers down. The magnetic high speed train hisses to a stop, and you step onto the platform with your holo-briefcase. Towering digital billboards cast colorful shadows. A friendly local notices you looking around...",
+        "choices": {
+          "A": {
+            "text": "Ask about the vibrant Pulse District with the sky-high floating clubs",
+            "pointKey": "city-scene1-ChoiceA",
+            "dynamicLocation": "Pulse District"
+          },
+          "B": {
+            "text": "Ask about the quiet Haven Heights in the bio-dome district away from Neon",
+            "pointKey": "city-scene1-ChoiceB",
+            "dynamicLocation": "Haven Heights"
+          }
+        }
+      },
+      "scene2": {
+        "text": "Following their advice, you decide to head to {{location}}. As you approach the {{accommodation}}, your neural implant reminds you it's dinnertime, and you notice...",
+        "dynamicText": {
+          "Pulse District": "Sky Docks",
+          "Haven Heights": "grass mounds"
+        },
+        "choices": {
+          "A": {
+            "text": "A cozy retro-cafe with real books and analog coffee machines...",
+            "pointKey": "city-scene2-ChoiceA"
+          },
+          "B": {
+            "text": "A sky-high rooftop bar where holographic bartenders serve glowing cocktails...",
+            "pointKey": "city-scene2-ChoiceB"
+          }
+        }
+      },
+      "scene3": {
+        "text": "Following their advice, you decide to head to {{location}}. As you approach the {{accommodation}}, your neural implant reminds you it's dinnertime, and you notice...",
+        "dynamicText": {
+          "Pulse District": "Sky Docks",
+          "Haven Heights": "grass mounds"
+        },
+        "choices": {
+          "A": {
+            "text": "A cozy retro-cafe with real books and analog coffee machines...",
+            "pointKey": "city-scene2-ChoiceA"
+          },
+          "B": {
+            "text": "A sky-high rooftop bar where holographic bartenders serve glowing cocktails...",
+            "pointKey": "city-scene2-ChoiceB"
+          }
+        }
+      }
+
+    }
+  }
