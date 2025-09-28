@@ -31,6 +31,10 @@ export default function CityScene1({ playerName, onContinue, setThemeClass }) {
     >
       {/* Scenario panel (top-left) */}
       <section
+
+      className="relative 
+             hover:scale-105 
+             transition-all duration-300"
         style={{
           position: "absolute",
           top: "1.5rem",
@@ -68,21 +72,21 @@ export default function CityScene1({ playerName, onContinue, setThemeClass }) {
         }}
       >
         <button
-          onClick={onContinue}
-          style={{
-            backgroundColor: "#1c2340",
-            color: "#9bdcff",
-            border: "2px solid #3a4ea3",
-            borderRadius: 10,
-            padding: "0.7rem 1.2rem",
-            fontFamily: "Pixelify Sans, monospace",
-            textTransform: "uppercase",
-            boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
-            cursor: "pointer",
-          }}
-        >
-          Continue ➜
-        </button>
+  onClick={onContinue}
+  className="city-btn-glow"
+  style={{
+    backgroundColor: "#1c2340",
+    color: "#9bdcff",
+    border: "2px solid #3a4ea3",
+    borderRadius: 10,
+    padding: "0.7rem 1.2rem",
+    fontFamily: "Pixelify Sans, monospace",
+    textTransform: "uppercase",
+    cursor: "pointer",
+  }}
+>
+  Continue ➜
+</button>
       </div>
     </main>
   );

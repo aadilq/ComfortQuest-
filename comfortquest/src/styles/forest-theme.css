@@ -75,3 +75,47 @@ body.forest-theme button:disabled {
   background-color: #1a1a40;
   cursor: not-allowed;
 }
+
+/* === Forest Glow Styles === */
+
+/* General button glow (scene continue buttons, back buttons, etc.) */
+.forest-btn-glow {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  box-shadow: 0 0 6px rgba(238, 155, 0, 0.35), 0 0 12px rgba(238, 155, 0, 0.2);
+}
+
+.forest-btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(238, 155, 0, 0.85), 0 0 18px rgba(238, 155, 0, 0.65);
+  border-color: #ee9b00 !important;
+}
+
+.forest-btn-glow:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #0d1022 inset,
+    0 0 0 3px #925f00,
+    0 0 10px rgba(238, 155, 0, 0.9),
+    0 0 20px rgba(238, 155, 0, 0.6);
+}
+
+/* Choice button glow (if you want forest choices to glow too) */
+.forest-choice-glow {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  box-shadow: 0 0 6px rgba(197, 143, 59, 0.35), 0 0 12px rgba(197, 143, 59, 0.2);
+}
+
+.forest-choice-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(197, 143, 59, 0.85), 0 0 18px rgba(197, 143, 59, 0.65);
+  border-color: #c58f3b !important;
+}
+
+.forest-choice-glow:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #0d1022 inset,
+    0 0 0 3px #c58f3b,
+    0 0 10px rgba(197, 143, 59, 0.9),
+    0 0 20px rgba(197, 143, 59, 0.6);
+}

@@ -22,10 +22,25 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
   };
 
   return (
-    <main role="main" aria-labelledby="cq-title" style={{ width: "100%" }}>
+    <main 
+    
+    
+    role="main" aria-labelledby="cq-title" style={{ width: "100%" }}>
       <header>
-        <h1 id="cq-title">ComfortQuest</h1>
-        <p>
+        <h1 
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "id="cq-title">ComfortQuest</h1>
+        <p
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              ">
           Welcome, {playerName}! Choose which theme you would like for your quest.
         </p>
       </header>
@@ -44,7 +59,11 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
           {/* CITY card image */}
           <button
             type="button"
-            className=""
+            className="relative 
+             hover:scale-105 
+             transition-all duration-300 
+             outline-none focus:outline-none focus:ring-0
+             border-0 shadow-none"
             onClick={() => handleThemeSelect("city")}
             aria-pressed={selectedTheme === "city"}
             style={{
@@ -60,7 +79,7 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
               alt="Select City theme"
               style={{
                 display: "block",
-                maxWidth: 240,   // ↓ smaller than before
+                maxWidth: 300,   // ↓ smaller than before
                 width: "100%",
                 borderRadius: 8,
                 
@@ -71,6 +90,13 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
             {/* FOREST card image */}
             <button
                 type="button"
+
+                className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "
             onClick={() => handleThemeSelect("forest")}
             aria-pressed={selectedTheme === "forest"}
             style={{
@@ -85,7 +111,7 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
             alt="Select Forest theme"
             style={{
                 display: "block",
-                maxWidth: 240,   // same size as city card
+                maxWidth: 300,   // same size as city card
                 width: "100%",
                 borderRadius: 8,
             }}
@@ -97,6 +123,12 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
       {/* Actions */}
       <footer style={{ marginTop: "0.75rem" }}>
         <button
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "
           onClick={() => {
             setThemeClass?.("neutral"); // ensure welcome is neutral
             onBack?.();
@@ -111,6 +143,12 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
         </button>
 
         <button
+        className="relative 
+              
+              
+              hover:scale-105 
+              transition-all duration-300 
+              "
           onClick={handleContinue}
           disabled={!selectedTheme}
           style={{
