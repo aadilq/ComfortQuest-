@@ -1,37 +1,38 @@
-// src/components/quiz/forest/ForestScene4Choices.jsx
+// src/components/quiz/city/CityScene4Choices.jsx
 import { useEffect, useState } from "react";
-import bg from "../../../assets/forestscene4.png";
+import bg from "../../../assets/cityscene4.png";
 
-export default function ForestScene4Choices({
+export default function CityScene4Choices({
   setThemeClass,
-  onBack,     // () => void
-  onChoose,   // (choiceKey: 'A' | 'B') => void
+  onBack,
+  onChoose, // (choiceKey: 'A' | 'B') => void
 }) {
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    setThemeClass?.("forest");
+    setThemeClass?.("city");
   }, [setThemeClass]);
 
   const choices = [
     {
       key: "A",
-      title: "Return to Town",
+      title: "Connected High-Energy World",
       text:
-        "Head back while the trail is clear to grab a warm drink and share stories.",
+        "Remember every face you met and every digital wonder you experienced — this connected, high-energy world is exactly where you belong.",
     },
     {
       key: "B",
-      title: "Stay for Stargazing",
+      title: "Quiet Moments Away from Screens",
       text:
-        "Spread a blanket and watch the constellations rise above the treeline.",
+        "Hold onto the peaceful moments when you stepped away from the screens and found something real and quiet in this chaotic city.",
+      scoring: "+3 Cozy Mystery/Drama, +2 Animated Comfort",
     },
   ];
 
   return (
     <main
       role="main"
-      aria-labelledby="forest-s4-choices-title"
+      aria-labelledby="scene4-choices"
       style={{
         position: "fixed",
         inset: 0,
@@ -48,20 +49,20 @@ export default function ForestScene4Choices({
           top: "1.25rem",
           left: "1.25rem",
           right: "1.25rem",
-          color: "#ee9b00",
+          color: "#9bdcff",
           fontFamily: "Pixelify Sans, monospace",
         }}
       >
-        <h2 id="forest-s4-choices-title" style={{ margin: 0, color: "#c58f3b" }}>
-          The Last Call
+        <h2 id="scene4-choices" style={{ margin: 0, color: "#b985ff" }}>
+          What Will You Carry With You?
         </h2>
         <p style={{ margin: "0.25rem 0 0" }}>
-          One more decision for the night.
+          Choose what you want to remember from Neon Vista.
         </p>
       </header>
 
       <section
-        aria-label="Choose your path"
+        aria-label="Scene 4 choices"
         style={{
           position: "absolute",
           top: "6rem",
@@ -87,17 +88,18 @@ export default function ForestScene4Choices({
                 background: "rgba(0,0,0,0.45)",
                 backdropFilter: "blur(4px)",
                 WebkitBackdropFilter: "blur(4px)",
-                border: active ? "3px solid #ee9b00" : "2px solid #444",
-                boxShadow: "0 0 0 2px rgba(20,25,15,0.6) inset, 2px 2px #000",
-                color: "#ee9b00",
+                border: active ? "3px solid #9bdcff" : "2px solid #3a4ea3",
+                boxShadow: "0 0 0 2px #0d1022 inset, 2px 2px #000",
+                color: "#9bdcff",
                 cursor: "pointer",
                 fontFamily: "Pixelify Sans, monospace",
               }}
             >
-              <div style={{ fontSize: "1rem", color: "#c58f3b", marginBottom: 6 }}>
+              <div style={{ fontSize: "1rem", color: "#b985ff", marginBottom: 6 }}>
                 Choice {c.key}: {c.title}
               </div>
               <div style={{ lineHeight: 1.55 }}>{c.text}</div>
+              <div style={{ marginTop: 8, opacity: 0.7 }}>{c.scoring}</div>
             </button>
           );
         })}
@@ -116,8 +118,8 @@ export default function ForestScene4Choices({
           onClick={onBack}
           style={{
             backgroundColor: "#1c2340",
-            color: "#925f00",
-            border: "2px solid #444",
+            color: "#9bdcff",
+            border: "2px solid #3a4ea3",
             borderRadius: 10,
             padding: "0.6rem 1rem",
             fontFamily: "Pixelify Sans, monospace",
@@ -128,15 +130,14 @@ export default function ForestScene4Choices({
         >
           ⬅ Back
         </button>
-
         <button
           disabled={!selected}
-          onClick={() => selected && onChoose?.(selected)}
+          onClick={() => selected && onChoose(selected)}
           style={{
             opacity: selected ? 1 : 0.5,
             backgroundColor: "#1c2340",
-            color: "#925f00",
-            border: "2px solid #444",
+            color: "#9bdcff",
+            border: "2px solid #3a4ea3",
             borderRadius: 10,
             padding: "0.6rem 1rem",
             fontFamily: "Pixelify Sans, monospace",

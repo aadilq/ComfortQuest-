@@ -44,9 +44,11 @@ export default function ThemeSelector({ playerName, onBack, onContinue, setTheme
           {/* CITY card image */}
           <button
             type="button"
+            className=""
             onClick={() => handleThemeSelect("city")}
             aria-pressed={selectedTheme === "city"}
             style={{
+               
               padding: 0,
               border: "none",
               background: "transparent",
