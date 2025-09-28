@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Welcome from "./components/landing/Welcome.jsx";
 import ThemeSelector from "./components/quiz/ThemeSelector.jsx";
 
-// City path screens
+// City path
 import CityScene1 from "./components/quiz/city/cityScene1.jsx";
 import CityScene1Choices from "./components/quiz/city/cityScene1Choices.jsx";
 import CityScene2 from "./components/quiz/city/CityScene2.jsx";
@@ -13,93 +13,117 @@ import CityScene3Choices from "./components/quiz/city/CityScene3Choices.jsx";
 import CityScene4 from "./components/quiz/city/CityScene4.jsx";
 import CityScene4Choices from "./components/quiz/city/CityScene4Choices.jsx";
 
-// Theme CSS (load once)
+// Forest path
+import ForestScene1 from "./components/quiz/forest/ForestScene1.jsx";
+import ForestScene1Choices from "./components/quiz/forest/ForestScene1Choices.jsx";
+import ForestScene2 from "./components/quiz/forest/ForestScene2.jsx";
+import ForestScene2Choices from "./components/quiz/forest/ForestScene2Choices.jsx";
+import ForestScene3 from "./components/quiz/forest/ForestScene3.jsx";
+import ForestScene3Choices from "./components/quiz/forest/ForestScene3Choices.jsx";
+import ForestScene4 from "./components/quiz/forest/ForestScene4.jsx";
+import ForestScene4Choices from "./components/quiz/forest/ForestScene4Choices.jsx";
+
+// Theme CSS
 import "./styles/neutral-theme.css";
 import "./styles/city-theme.css";
-import "./styles/forest-theme.css"; // can stay empty for now
+import "./styles/forest-theme.css";
 
 export default function FlowController() {
   const [step, setStep] = useState("welcome");
   const [playerName, setPlayerName] = useState("");
   const [selectedTheme, setSelectedTheme] = useState(null);
 
-  // Track user choices along the route
   const [storyState, setStoryState] = useState({
-    cityScene1: null,
-    cityScene2: null,
-    cityScene3: null,
-    cityScene4: null,
+    cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
+    forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
   });
 
-  // Centralized theme switcher
   const setThemeClass = (t) => {
     document.body.className = "";
     document.body.classList.add(`${t}-theme`);
   };
 
-  // Always start neutral
-  useEffect(() => {
-    setThemeClass("neutral");
-  }, []);
+  useEffect(() => { setThemeClass("neutral"); }, []);
 
-  // ============ Welcome → ThemeSelector ============
+  // Welcome → Theme
   const handleStart = (name) => {
     setPlayerName(name);
     setSelectedTheme(null);
-    setStoryState({ cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null });
+    setStoryState({
+      cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
+      forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
+    });
     setThemeClass("neutral");
     setStep("theme");
   };
 
-  // ============ ThemeSelector ============
-  const handleThemeBack = () => {
-    setThemeClass("neutral");
-    setStep("welcome");
-  };
-
+  // Theme selection
+  const handleThemeBack = () => { setThemeClass("neutral"); setStep("welcome"); };
   const handleThemeContinue = (theme) => {
     setSelectedTheme(theme);
     setThemeClass(theme);
     if (theme === "city") setStep("city-scene-1");
-    else if (theme === "forest") setStep("forest-scene-1"); // stub
+    if (theme === "forest") setStep("forest-scene-1");
   };
 
-  // ============ City path ============
-  // Scene 1 → Choices
+  // ===== CITY =====
   const goCityScene1Choices = () => setStep("city-scene-1-choices");
   const handleCityScene1Choice = (choiceKey) => {
     setStoryState((s) => ({ ...s, cityScene1: choiceKey }));
     setStep("city-scene-2");
   };
 
-  // Scene 2 → Choices
   const goCityScene2Choices = () => setStep("city-scene-2-choices");
   const handleCityScene2Choice = (choiceKey) => {
     setStoryState((s) => ({ ...s, cityScene2: choiceKey }));
     setStep("city-scene-3");
   };
 
-  // Scene 3 → Choices
   const goCityScene3Choices = () => setStep("city-scene-3-choices");
   const handleCityScene3Choice = (choiceKey) => {
     setStoryState((s) => ({ ...s, cityScene3: choiceKey }));
     setStep("city-scene-4");
   };
 
-  // Scene 4 → Choices → (Result or End)
   const goCityScene4Choices = () => setStep("city-scene-4-choices");
   const handleCityScene4Choice = (choiceKey) => {
     setStoryState((s) => ({ ...s, cityScene4: choiceKey }));
-    // TODO: route to results/recommendation screen
-    setStep("city-result"); // placeholder
+    setStep("city-result"); // placeholder result
   };
 
-  // Restart
+  // ===== FOREST =====
+  const goForestScene1Choices = () => setStep("forest-scene-1-choices");
+  const handleForestScene1Choice = (choiceKey) => {
+    setStoryState((s) => ({ ...s, forestScene1: choiceKey }));
+    setStep("forest-scene-2");
+  };
+
+  const goForestScene2Choices = () => setStep("forest-scene-2-choices");
+  const handleForestScene2Choice = (choiceKey) => {
+    setStoryState((s) => ({ ...s, forestScene2: choiceKey }));
+    setStep("forest-scene-3");
+  };
+
+  const goForestScene3Choices = () => setStep("forest-scene-3-choices");
+  const handleForestScene3Choice = (choiceKey) => {
+    setStoryState((s) => ({ ...s, forestScene3: choiceKey }));
+    setStep("forest-scene-4");
+  };
+
+  const goForestScene4Choices = () => setStep("forest-scene-4-choices");
+  const handleForestScene4Choice = (choiceKey) => {
+    setStoryState((s) => ({ ...s, forestScene4: choiceKey }));
+    setStep("forest-result"); // placeholder result
+  };
+
   const handleRestart = () => {
     setThemeClass("neutral");
     setPlayerName("");
     setSelectedTheme(null);
-    setStoryState({ cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null });
+    setStoryState({
+      cityScene1: null, cityScene2: null, cityScene3: null, cityScene4: null,
+      forestScene1: null, forestScene2: null, forestScene3: null, forestScene4: null,
+    });
     setStep("welcome");
   };
 
@@ -116,109 +140,87 @@ export default function FlowController() {
         />
       )}
 
-      {/* ---- CITY ROUTE ---- */}
+      {/* CITY ROUTE */}
       {step === "city-scene-1" && (
-        <CityScene1
-          playerName={playerName}
-          setThemeClass={setThemeClass}
-          onContinue={goCityScene1Choices}
-        />
+        <CityScene1 playerName={playerName} setThemeClass={setThemeClass} onContinue={goCityScene1Choices} />
       )}
-
       {step === "city-scene-1-choices" && (
-        <CityScene1Choices
-          playerName={playerName}
-          setThemeClass={setThemeClass}
-          onBack={() => setStep("city-scene-1")}
-          onChoose={handleCityScene1Choice}
-        />
+        <CityScene1Choices setThemeClass={setThemeClass} onBack={() => setStep("city-scene-1")} onChoose={handleCityScene1Choice} />
       )}
-
       {step === "city-scene-2" && (
         <CityScene2
-          playerName={playerName}
+          setThemeClass={setThemeClass}
+          onContinue={goCityScene2Choices}
           prevChoiceLabel={
             storyState.cityScene1 === "A" ? "the Pulse District" :
             storyState.cityScene1 === "B" ? "Haven Heights" : null
           }
-          setThemeClass={setThemeClass}
-          onContinue={goCityScene2Choices}
         />
       )}
-
       {step === "city-scene-2-choices" && (
-        <CityScene2Choices
-          setThemeClass={setThemeClass}
-          onBack={() => setStep("city-scene-2")}
-          onChoose={handleCityScene2Choice}
-        />
+        <CityScene2Choices setThemeClass={setThemeClass} onBack={() => setStep("city-scene-2")} onChoose={handleCityScene2Choice} />
       )}
-
-      {step === "city-scene-3" && (
-        <CityScene3
-          setThemeClass={setThemeClass}
-          onContinue={goCityScene3Choices}
-        />
-      )}
-
+      {step === "city-scene-3" && <CityScene3 setThemeClass={setThemeClass} onContinue={goCityScene3Choices} />}
       {step === "city-scene-3-choices" && (
-        <CityScene3Choices
-          setThemeClass={setThemeClass}
-          onBack={() => setStep("city-scene-3")}
-          onChoose={handleCityScene3Choice}
-        />
+        <CityScene3Choices setThemeClass={setThemeClass} onBack={() => setStep("city-scene-3")} onChoose={handleCityScene3Choice} />
       )}
-
-      {step === "city-scene-4" && (
-        <CityScene4
-          setThemeClass={setThemeClass}
-          onContinue={goCityScene4Choices}
-        />
-      )}
-
+      {step === "city-scene-4" && <CityScene4 setThemeClass={setThemeClass} onContinue={goCityScene4Choices} />}
       {step === "city-scene-4-choices" && (
-        <CityScene4Choices
-          setThemeClass={setThemeClass}
-          onBack={() => setStep("city-scene-4")}
-          onChoose={handleCityScene4Choice}
-        />
+        <CityScene4Choices setThemeClass={setThemeClass} onBack={() => setStep("city-scene-4")} onChoose={handleCityScene4Choice} />
       )}
-
-      {/* ---- RESULT / END ---- */}
       {step === "city-result" && (
-        <main
-          role="main"
-          style={{
-            position: "fixed",
-            inset: 0,
-            display: "grid",
-            placeItems: "center",
-            textAlign: "center",
-            padding: "2rem",
-          }}
-        >
+        <main role="main" style={{ position: "fixed", inset: 0, display: "grid", placeItems: "center", textAlign: "center", padding: "2rem" }}>
           <div>
-            <h2 style={{ marginBottom: "0.75rem" }}>City Path — Summary</h2>
-            <p style={{ margin: 0 }}>
-              Scene1: <b>{storyState.cityScene1 || "—"}</b> ·{" "}
-              Scene2: <b>{storyState.cityScene2 || "—"}</b> ·{" "}
-              Scene3: <b>{storyState.cityScene3 || "—"}</b> ·{" "}
-              Scene4: <b>{storyState.cityScene4 || "—"}</b>
+            <h2>City Path — Summary</h2>
+            <p>
+              {["1","2","3","4"].map((n,i)=>(
+                <span key={n}>Scene{n}: <b>{storyState[`cityScene${n}`] || "—"}</b>{i<3?" · ":""}</span>
+              ))}
             </p>
-            <button onClick={handleRestart} style={{ marginTop: "1rem" }}>
-              Restart
-            </button>
+            <button onClick={handleRestart} style={{ marginTop: "1rem" }}>Restart</button>
           </div>
         </main>
       )}
 
-      {/* ---- FOREST STUB ---- */}
+      {/* FOREST ROUTE */}
       {step === "forest-scene-1" && (
-        <main role="main" style={{ textAlign: "center", padding: "2rem" }}>
-          <h2>Forest Scene 1 (coming soon)</h2>
-          <button onClick={handleRestart} style={{ marginTop: "1rem" }}>
-            Restart
-          </button>
+        <ForestScene1 playerName={playerName} setThemeClass={setThemeClass} onContinue={goForestScene1Choices} />
+      )}
+      {step === "forest-scene-1-choices" && (
+        <ForestScene1Choices setThemeClass={setThemeClass} onBack={() => setStep("forest-scene-1")} onChoose={handleForestScene1Choice} />
+      )}
+      {step === "forest-scene-2" && (
+        <ForestScene2
+          setThemeClass={setThemeClass}
+          onContinue={goForestScene2Choices}
+          prevChoiceLabel={
+            storyState.forestScene1 === "A" ? "the Ranger Outpost" :
+            storyState.forestScene1 === "B" ? "the Lantern Path" : null
+          }
+        />
+      )}
+      {step === "forest-scene-2-choices" && (
+        <ForestScene2Choices setThemeClass={setThemeClass} onBack={() => setStep("forest-scene-2")} onChoose={handleForestScene2Choice} />
+      )}
+      {step === "forest-scene-3" && <ForestScene3 setThemeClass={setThemeClass} onContinue={goForestScene3Choices} />}
+      {step === "forest-scene-3-choices" && (
+        <ForestScene3Choices setThemeClass={setThemeClass} onBack={() => setStep("forest-scene-3")} onChoose={handleForestScene3Choice} />
+      )}
+      {step === "forest-scene-4" && <ForestScene4 setThemeClass={setThemeClass} onContinue={goForestScene4Choices} />}
+      {step === "forest-scene-4-choices" && (
+        <ForestScene4Choices setThemeClass={setThemeClass} onBack={() => setStep("forest-scene-4")} onChoose={handleForestScene4Choice} />
+      )}
+      {step === "forest-result" && (
+        <main role="main" style={{ position: "fixed", inset: 0, display: "grid", placeItems: "center", textAlign: "center", padding: "2rem" }}>
+          <div>
+            <h2>Forest Path — Summary</h2>
+            <p>
+              {["1","2","3","4"].map((n,i)=>(
+                <span key={n}>Scene{n}: <b>{storyState[`forestScene${n}`] || "—"}</b>{i<3?" · ":""}</span>
+              ))}
+            </p>
+            <button onClick={handleRestart} style={{ marginTop: "1rem" }}>Restart</button>
+          </div>
         </main>
       )}
     </>

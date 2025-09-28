@@ -19,7 +19,6 @@ export default function CityScene2Choices({
       title: "Retro Café (books & analog coffee)",
       text:
         "A cozy retro-café with real books and analog coffee machines — a nostalgic refuge from the cybernated world.",
-      scoring: "+3 Animated Comfort, +2 Feel-Good Reality",
     },
     {
       key: "B",
