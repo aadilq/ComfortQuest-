@@ -37,7 +37,10 @@ Please give it a try to see what your tailored comfort shows!
 <img width="1381" height="791" alt="Screenshot 2025-09-28 at 10 42 10 AM" src="https://github.com/user-attachments/assets/4865afa6-8122-4e32-9dc1-bbc7c1c8b7a2" />
 <img width="1460" height="817" alt="Screenshot 2025-09-28 at 10 42 20 AM" src="https://github.com/user-attachments/assets/e221f8cf-61b4-43f8-bed5-433440f471f9" />
 
+## Demo
+
 <img width="1460" height="810" alt="Screenshot 2025-10-01 at 10 40 09 PM" src="https://github.com/user-attachments/assets/f941adeb-9008-4fd7-8d97-a1691329ddbb" />
+
 
 
 
